@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Rocket Escape</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Specific styles for detail page */
+        .detail-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .project-meta {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #a0a0b0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-content {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .detail-content h2 {
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            color: #a5d6ff;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portofolio.</div>
+                <ul class="nav-links">
+                    <li><a href="Iindex..html#home">Beranda</a></li>
+                    <li><a href="Iindex..html#projects">Kembali ke Proyek</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="detail-hero">
+            <div class="container">
+                <a href="Iindex..html#projects" class="back-btn"><i class="ph ph-arrow-left"></i> Kembali</a>
+                <h1 style="font-size: 3rem; margin-top: 20px; margin-bottom: 10px;">Rocket Escape</h1>
+                <p style="color: #a0a0b0; max-width: 600px; margin: 0 auto;">Game arkade bertahan hidup berbasis Python
+                    & Pygame.</p>
+
+                <div class="project-meta" style="margin-top: 30px;">
+                    <span class="meta-tag"><i class="ph ph-code"></i> Python</span>
+                    <span class="meta-tag"><i class="ph ph-game-controller"></i> Pygame Library</span>
+                    <span class="meta-tag"><i class="ph ph-desktop"></i> Desktop App</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="container detail-content">
+            <img src="rocket.png" alt="Rocket Game Screenshot"
+                style="width: 100%; border-radius: 12px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1);">
+
+            <h2>Tentang Proyek</h2>
+            <p>
+                Rocket Escape adalah game sederhana namun menantang yang saya buat untuk melatih logika pemrograman
+                berorientasi objek (OOP) di Python.
+                Tujuan game ini adalah bertahan hidup selama mungkin dengan menghindari asteroid yang jatuh dengan
+                kecepatan yang terus meningkat.
+            </p>
+
+            <h2>Fitur Utama</h2>
+            <ul style="margin-left: 20px; margin-bottom: 30px;">
+                <li><strong>Kontrol Responsif:</strong> Pemain dapat menggerakkan roket ke kiri dan kanan dengan mulus.
+                </li>
+                <li><strong>Kesulitan Dinamis:</strong> Semakin lama bertahan, asteroid akan jatuh semakin cepat.</li>
+                <li><strong>Sistem Skor & Highscore:</strong> Menyimpan skor tertinggi secara lokal.</li>
+            </ul>
+
+            <h2>Penjelasan Kode (Logic)</h2>
+            <p>
+                Inti dari game ini adalah "Game Loop" yang berjalan terus menerus untuk memperbarui posisi objek di
+                layar.
+                Berikut adalah cuplikan logika bagaimana asteroid dimunculkan secara acak:
+            </p>
+
+            <pre class="code-block">
+# Logika spawning asteroid
+def spawn_asteroid(asteroids, screen_width):
+    if len(asteroids) < MAX_ASTEROIDS:
+        x_pos = random.randint(0, screen_width - 50)
+        y_pos = -50 # Muncul di atas layar
+        asteroids.append(pygame.Rect(x_pos, y_pos, 50, 50))
+    
+    # Logika pergerakan dan tabrakan
+    for asteroid in asteroids:
+        asteroid.y += FALL_SPEED
+        
+        # Deteksi tabrakan dengan roket
+        if player_rect.colliderect(asteroid):
+            game_over = True
+</pre>
+
+            <p>
+                Saya menggunakan modul `random` untuk menentukan posisi X asteroid, dan `pygame.Rect` untuk
+                menangani deteksi tabrakan (`colliderect`) yang akurat antara kotak roket dan asteroid.
+            </p>
+
+            <h2>Tantangan & Pelajaran</h2>
+            <p>
+                Tantangan terbesar dalam proyek ini adalah menyeimbangkan tingkat kesulitan (game balancing)
+                agar tidak terlalu mudah di awal tetapi tetap bisa dimainkan di level tinggi.
+                Saya belajar banyak tentang manajemen memori (menghapus objek asteroid yang sudah keluar layar)
+                dan optimalisasi loop rendering.
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; color: #666;">
+            <p>&copy; 2025 Portofolio Ikhsan</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portofolio.</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#projects">Proyek</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="avatar-wrapper">
+                    <img src="https://ui-avatars.com/api/?name=Ikhsan+Fadila&background=333&color=fff&size=150"
+                        alt="Avatar" class="avatar">
+                </div>
+                <h1>
+                    <div class="reveal-text"><span>Halo, Saya Ikhsan</span></div>
+                    <div class="reveal-text"><span class="gradient-text">Frontend Developer</span></div>
+                </h1>
+                <p>Menciptakan pengalaman digital yang modern, minimalis, dan fungsional dengan sentuhan estetika
+                    tinggi.</p>
+                <a href="#projects" class="cta-btn">
+                    Lihat Proyek <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="section-subtitle">Halo, saya Ikhsan Fadila, mahasiswa Sistem Informasi yang memiliki minat
+                        di dunia pemrograman. Saat ini saya sedang fokus mengembangkan kemampuan saya di Python serta
+                        terus mempelajari berbagai hal di bidang teknologi.
+
+                        Portofolio ini dibuat sebagai media latihan dan dokumentasi proses belajar saya, sekaligus
+                        langkah awal menuju cita-cita saya untuk menjadi seorang Software Engineer di masa depan.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Filosofi & Latar Belakang</h3>
+                        <p>Saya percaya bahwa kode yang baik bukan hanya tentang fungsi, tetapi juga tentang bagaimana
+                            pengguna merasakannya. Dengan latar belakang di pengembangan web dan desain UI/UX, saya
+                            selalu berusaha untuk menggabungkan teknis yang solid dengan visual yang memukau.</p>
+                        <p>Motivasi terbesar saya adalah melihat ide-ide abstrak berubah menjadi solusi digital yang
+                            nyata dan bermanfaat bagi orang banyak.</p>
+                    </div>
+
+                    <div class="skills-container">
+                        <h3>Skills & Tools</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Proyek Unggulan</h2>
+                    <p class="section-subtitle">Beberapa karya terbaik yang pernah saya buat</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="rocket.png" alt="Rocket Escape Game">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-role">Python Developer</span>
+                            <h3 class="project-title">Rocket Escape</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pygame</span>
+                                <span>Game Dev</span>
+                            </div>
+                            <p class="project-detail-preview">
+                                Game arkade desktop di mana pemain mengendalikan roket menghindari asteroid. Fitur:
+                                skor, nyawa, dan peningkatan kesulitan dinamis.
+                            </p>
+                            <a href="project-rocket.html" class="project-link">Lihat Detail <i
+                                    class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="kasir_warung.png" alt="Sistem Kasir Warung CLI">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-role">Python Developer</span>
+                            <h3 class="project-title">Sistem Kasir Warung</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>CLI</span>
+                                <span>Management</span>
+                            </div>
+                            <p class="project-detail-preview">
+                                Program kasir sederhana berbasis CLI untuk manajemen transaksi warung, perhitungan total
+                                belanja, dan kembalian otomatis.
+                            </p>
+                            <a href="project-kasir.html" class="project-link">Lihat Detail <i
+                                    class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="password_gen.png" alt="Password Generator">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-role">Python Developer</span>
+                            <h3 class="project-title">Password Generator & Password Strength Checker</h3>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Security</span>
+                                <span>Algorithm</span>
+                            </div>
+                            <p class="project-detail-preview">
+                                Program aplikasi sederhana berbasis Python untuk membuat password acak aman dan mengecek
+                                tingkat kekuatannya. Mencakup fitur penilaian keamanan berdasarkan panjang huruf, angka,
+                                dan simbol.
+                            </p>
+                            <a href="project-password.html" class="project-link">Lihat Detail <i
+                                    class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Sertifikat & Lisensi</h2>
+                    <p class="section-subtitle">Pengakuan profesional dan kompetensi teknis</p>
+                </div>
+
+                <div class="certificates-grid">
+                    <!-- Certificate 1 -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="sertifikat_api.png" alt="Sertifikat API Introduction MySkill"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>API Introduction</h3>
+                            <p class="cert-issuer">MySkill</p>
+                            <span class="cert-date">Des 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 2 -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="sertifikat_internet.png" alt="Sertifikat Internet Introduction MySkill"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Internet Introduction</h3>
+                            <p class="cert-issuer">MySkill</p>
+                            <span class="cert-date">Des 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- Certificate 3 -->
+                    <div class="certificate-card">
+                        <div class="certificate-image">
+                            <img src="sertifikat_frontend.png"
+                                alt="Sertifikat Front-End Development Introduction MySkill"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Front-End Development Introduction</h3>
+                            <p class="cert-issuer">MySkill</p>
+                            <span class="cert-date">Des 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container contact-container">
+                <div class="section-head">
+                    <h2 class="section-title">Hubungi Saya</h2>
+                    <p class="section-subtitle">Tertarik bekerja sama? Kirimkan pesan!</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Alamat Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Pesan Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Kirim Pesan</button>
+                </form>
+
+                <div class="professional-links">
+                    <p>Atau temukan saya di:</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="#" class="social-link" title="GitHub"><i class="ph ph-github-logo"></i></a>
+                        <!-- <a href="#" class="social-link" title="Download CV"><i class="ph ph-file-pdf"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Portofolio ikhsan</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

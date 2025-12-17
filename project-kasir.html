@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Sistem Kasir Warung</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Specific styles for detail page */
+        .detail-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .project-meta {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #a0a0b0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-content {
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .detail-content h2 {
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            color: #a5d6ff;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portofolio.</div>
+                <ul class="nav-links">
+                    <li><a href="Iindex..html#home">Beranda</a></li>
+                    <li><a href="Iindex..html#projects">Kembali ke Proyek</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="detail-hero">
+            <div class="container">
+                <a href="Iindex..html#projects" class="back-btn"><i class="ph ph-arrow-left"></i> Kembali</a>
+                <h1 style="font-size: 3rem; margin-top: 20px; margin-bottom: 10px;">Sistem Kasir Warung</h1>
+                <p style="color: #a0a0b0; max-width: 600px; margin: 0 auto;">Aplikasi manajemen transaksi sederhana
+                    untuk usaha mikro berbasis Python.</p>
+
+                <div class="project-meta" style="margin-top: 30px;">
+                    <span class="meta-tag"><i class="ph ph-code"></i> Python</span>
+                    <span class="meta-tag"><i class="ph ph-storefront"></i> Management</span>
+                    <span class="meta-tag"><i class="ph ph-calculator"></i> Accounting</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section class="container detail-content">
+            <img src="kasir_warung.png" alt="Sistem Kasir Warung CLI Screenshot"
+                style="width: 100%; border-radius: 12px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1);">
+
+            <h2>Tentang Proyek</h2>
+            <p>
+                Sistem Kasir Warung adalah program aplikasi Python sederhana yang dirancang untuk membantu pemilik
+                warung atau usaha kecil dalam mencatat pesanan, menghitung total belanja, dan memproses pembayaran
+                secara otomatis melalui antarmuka baris perintah (CLI).
+            </p>
+
+            <h2>Fitur Utama</h2>
+            <ul style="margin-left: 20px; margin-bottom: 30px;">
+                <li><strong>Daftar Menu Dinamis:</strong> Menyimpan data menu dan harga dalam struktur data dictionary.
+                </li>
+                <li><strong>Sistem Keranjang Belanja:</strong> Konsumen dapat memesan banyak jenis item sekaligus.</li>
+                <li><strong>Perhitungan Otomatis:</strong> Menghitung total harga per item dan total akhir belanjaan
+                    secara akurat.</li>
+                <li><strong>Struk & Kembalian:</strong> Menampilkan ringkasan pembayaran dan menghitung uang kembalian
+                    secara otomatis.</li>
+            </ul>
+
+            <h2>Penjelasan Kode (Logic)</h2>
+            <p>
+                Aplikasi ini menggunakan perulangan `while` untuk input pesanan terus-menerus hingga pengguna selesai,
+                serta `try-except` untuk menangani input angka yang tidak valid. Berikut kode lengkapnya:
+            </p>
+
+            <pre class="code-block">
+menu = {
+    "1" : ["ayam bakar", 15000],
+    "2" : ["lele bakar", 10000],
+    "3" : ["ayam goreng", 12000],
+    "4" : ["nasi goreng", 10000]
+}
+
+keranjang = []
+
+print("="*30)
+print("SELAMAT DATANG DI WARUNG SAYA")
+print("SILAKAN PILIH MENUNYA")
+print("="*30)
+
+print("DAFTAR MENU")
+for kode, item in menu.items() :
+    print (f"{kode}. {item[0]} - Rp{item[1]}")
+
+while menu :
+    kode = input("Masukkan kode menu yang anda pesan atau (q) untuk keluar : ")
+
+    if kode.lower() == "q" :
+        break 
+    if kode not in menu :
+        print("Masukkan kode yang ada di menu")
+        continue
+    try:
+        jumlah = int(input("Masukkan jumlah : "))
+    except ValueError:
+        print("Masukkan jumlah yang benar (angka)")
+        continue
+        
+    nama = menu[kode][0]
+    harga = menu[kode][1]
+    total_harga = harga * jumlah  
+    keranjang.append([nama, harga, jumlah, total_harga])
+    print(f"{jumlah} x {nama} berhasil ditambahkan.")
+
+print("="*30)
+print("STRUK PEMBAYARAN")
+total_bayar = 0 
+for item in keranjang :
+    print(f"{item[0]} x {item[2]} - Rp{item[3]}")
+    total_bayar += item[3]
+
+print(f"Total Bayar : Rp{total_bayar}")
+
+while True :
+    try:
+        uang = int(input("Uang dibayar : Rp"))
+        if uang < total_bayar:
+            print("Uang kurang! Coba lagi")
+        else:
+            break
+    except ValueError:
+        print("Masukkan angka yang benar")
+
+kembalian = uang - total_bayar
+print(f"Kembalian : Rp{kembalian}")
+print("Terima kasih sudah berbelanja")
+</pre>
+            <p>
+                Saya telah memperbaiki beberapa kesalahan penulisan (typo) dari kode asli untuk memastikan program
+                berjalan lancar dan terlihat lebih profesional ketika dijalankan.
+            </p>
+
+            <h2>Tantangan & Pelajaran</h2>
+            <p>
+                Proyek ini mengajarkan saya dasar logika bisnis pemrograman: Create (membuat pesanan), Read (baca menu),
+                dan perhitungan aritmatika sederhana. Mengelola input user agar program tidak crash saat dimasukkan
+                huruf (bukan angka) adalah tantangan tersendiri yang saya atasi dengan blok `try-except`.
+            </p>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; color: #666;">
+            <p>&copy; 2025 Portofolio Ikhsan</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
